@@ -733,3 +733,29 @@ button {
         transform: none;
     }
 }
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+}
+
+.back-to-top.show {
+    display: block;
+}
