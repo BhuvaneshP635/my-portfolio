@@ -101,3 +101,44 @@ backToTopButton.addEventListener("click", function () {
         behavior: "smooth"
     });
 });
+
+
+document.querySelectorAll(".hobby-card").forEach(card => {
+    const slides = card.querySelectorAll(".hobby-slideshow img");
+
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function showNextSlide() {
+        slides[currentSlide].classList.remove("active");
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.add("active");
+    }
+
+    function startSlideshow() {
+        if (slideInterval || slides.length === 0) {
+            return;
+        }
+
+        slides[currentSlide].classList.add("active");
+
+        slideInterval = setInterval(showNextSlide, 1000);
+    }
+
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+        slideInterval = null;
+
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+
+        currentSlide = 0;
+    }
+
+    card.addEventListener("mouseenter", startSlideshow);
+    card.addEventListener("mouseleave", stopSlideshow);
+});
+
