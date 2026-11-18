@@ -759,3 +759,365 @@ button {
 .back-to-top.show {
     display: block;
 }
+.profile-avatar span {
+    color: #ec4899;
+    background: transparent;
+    text-shadow: none;
+}
+
+/* interests card flip */
+
+.interest-card {
+    min-height: 250px;
+    perspective: 1000px;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.interest-card-inner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.interest-card:hover .interest-card-inner,
+.interest-card:focus-within .interest-card-inner {
+    transform: rotateY(180deg);
+}
+
+.interest-front,
+.interest-back {
+    position: absolute;
+    inset: 0;
+    padding: 25px 22px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--surface);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.interest-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.interest-back p {
+    color: var(--muted);
+}
+
+
+/* hobby cards */
+
+.hobby-card {
+    perspective: 1000px;
+    min-height: 420px;
+}
+
+.hobby-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.hobby-card:hover .hobby-card-inner {
+    transform: rotateY(180deg);
+}
+
+.hobby-card-front,
+.hobby-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.hobby-card-front {
+    background: var(--card-bg);
+}
+
+.hobby-card-back {
+    transform: rotateY(180deg);
+    background: #111;
+}
+
+.hobby-card-back .hobby-slideshow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hobby-card-back .hobby-slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.hobby-card-back .hobby-slideshow img.active {
+    opacity: 1;
+}
+
+.hobby-back-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    z-index: 2;
+}
+
+.hobby-icon {
+    font-size: 5rem;
+}
+
+.hobby-hint {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.hobby-movies {
+    background: linear-gradient(135deg, #1e3a8a, #7c2d12);
+}
+
+/* contact links */
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: var(--surface);
+    font-weight: 700;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.contact-link:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.contact-link span {
+    font-size: 1.4rem;
+}
+.playlist-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1db954, #159447);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.2);
+}
+
+.playlist-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(29, 185, 84, 0.4);
+}
+
+.playlist-icon {
+    font-size: 1.4rem;
+    animation: musicPulse 1.5s infinite;
+}
+
+.playlist-arrow {
+    transition: transform 0.3s ease;
+}
+
+.playlist-link:hover .playlist-arrow {
+    transform: translate(3px, -3px);
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* Hobby card height and text visibility */
+
+.hobby-card {
+    perspective: 1000px;
+    min-height: 500px;
+    height: auto;
+}
+
+.hobby-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.hobby-card:hover .hobby-card-inner {
+    transform: rotateY(180deg);
+}
+
+.hobby-card-front,
+.hobby-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    min-height: 500px;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.hobby-card-front {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+}
+
+.hobby-card-front .hobby-visual {
+    flex-shrink: 0;
+    min-height: 190px;
+}
+
+.hobby-card-front .hobby-info {
+    flex: 1;
+    padding: 24px;
+    overflow: visible;
+}
+
+.hobby-card-front .hobby-info p {
+    display: block;
+    overflow: visible;
+    white-space: normal;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    height: auto;
+    max-height: none;
+    line-height: 1.7;
+}
+
+.hobby-card-back {
+    transform: rotateY(180deg);
+    background: #111;
+}
+
+.hobby-card-back .hobby-slideshow {
+    position: absolute;
+    inset: 0;
+}
+
+.hobby-card-back .hobby-slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+
+.hobby-card-back .hobby-slideshow img.active {
+    opacity: 1;
+}
+
+/* Spotify button below the cards */
+
+.playlist-container {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.playlist-container p {
+    margin-bottom: 18px;
+    color: var(--text-secondary);
+}
+
+.playlist-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 24px;
+    border-radius: 50px;
+    background: #1db954;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 18px rgba(29, 185, 84, 0.2);
+}
+
+.playlist-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 25px rgba(29, 185, 84, 0.4);
+}
+
+.playlist-icon {
+    font-size: 1.6rem;
+    animation: musicPulse 1.5s infinite;
+}
+
+.playlist-arrow {
+    transition: transform 0.3s ease;
+}
+
+.playlist-link:hover .playlist-arrow {
+    transform: translate(3px, -3px);
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.hobby-movies {
+    background: linear-gradient(135deg, #1e3a8a, #7c2d12);
+}
