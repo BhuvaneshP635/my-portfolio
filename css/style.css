@@ -1121,3 +1121,18 @@ button {
 .hobby-movies {
     background: linear-gradient(135deg, #1e3a8a, #7c2d12);
 }
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+.logo-letter {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.35em;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
